@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مؤسسة الدكتور منصور العبدي للمقاولات والنقل</title>
+    <meta name="description" content="مؤسسة رائدة في المقاولات العامة، النقل الثقيل، وتوريد مواد الكسارات في اليمن.">
+    
+    <!-- Google Fonts: Cairo & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.3.1/swiper-bundle.min.css" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        arabic: ['Cairo', 'sans-serif'],
+                        english: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0F172A',
+                        secondary: '#D97706',
+                        surface: '#E2E8F0',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #E2E8F0;
+            background-image: radial-gradient(#CBD5E1 1px, transparent 1px);
+            background-size: 24px 24px;
+            color: #1E293B;
+            overflow-x: hidden;
+        }
+
+        .glass-header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 2px solid #D97706;
+            transition: all 0.4s ease;
+        }
+        
+        .content-card {
+            background: #FFFFFF;
+            border: 1px solid #CBD5E1;
+            box-shadow: 0 15px 35px -5px rgba(15, 23, 42, 0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .content-card:hover {
+            border-color: #94A3B8;
+            box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+            transform: translateY(-5px);
+        }
+
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 0.75rem;
+            color: #E2E8F0;
+            font-weight: 700;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #FFFFFF;
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #D97706;
+        }
+
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(15px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 100;
+        }
+        .group:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .tab-content-anim {
+            animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .tab-btn-custom {
+            border: 2px solid transparent;
+            background: #FFFFFF;
+            transition: all 0.3s ease;
+        }
+        .tab-btn-custom.active {
+            border-color: #0F172A;
+            background: #F8FAFC;
+            box-shadow: inset 0 0 0 1px #0F172A;
+        }
+        .tab-btn-custom:hover {
+            border-color: #D97706;
+            transform: translateY(-3px);
+        }
+
+        .btn-whatsapp { animation: pulse-whatsapp 2s infinite; }
+        @keyframes pulse-whatsapp {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.7) 40%, rgba(15,23,42,0.2) 100%);
+        }
+    </style>
+</head>
+<body class="antialiased font-arabic">
+
+    <header class="fixed w-full top-0 z-50 glass-header shadow-lg" id="header">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                
+                <!-- Logo -->
+                <a href="#home" class="flex-shrink-0 flex items-center gap-4 cursor-pointer group">
+                    <div class="w-12 h-12 lg:w-14 lg:h-14 bg-secondary rounded-2xl flex items-center justify-center shadow-lg border border-yellow-500 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-building-user text-white text-2xl lg:text-3xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-black text-xl lg:text-2xl text-white leading-tight transition-colors duration-300" id="logoTitle" data-i18n="logo_title">مؤسسة العبدي</h1>
+                        <p class="text-[10px] lg:text-xs text-secondary font-bold tracking-wide" data-i18n="logo_sub">للمقاولات والنقل الثقيل</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden xl:flex flex-1 justify-center gap-3 items-center h-full ms-6">
+                    <a href="#home" class="nav-link text-sm whitespace-nowrap active" data-i18n="nav_home">الرئيسية</a>
+                    
+                    <!-- من نحن (شاملة لـ 9 تبويبات) -->
+                    <div class="relative group h-full flex items-center cursor-pointer">
+                        <a href="#about" class="nav-link text-sm outline-none whitespace-nowrap">
+                            <span data-i18n="nav_about">من نحن</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div class="dropdown-menu absolute top-[75%] start-0 w-64 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden p-2">
+                            <a href="#about" onclick="switchTab('about-founder', 'about')" class="block px-4 py-3 font-bold text-slate-700 hover:bg-slate-50 hover:text-primary rounded-xl text-sm" data-i18n="tab_founder">المؤسس</a>
+                            <a href="#about" onclick="switchTab('about-vision-mission', 'about')" class="block px-4 py-3 font-bold text-slate-700 hover:bg-slate-50 hover:text-primary rounded-xl text-sm" data-i18n="tab_vis_mis">الرؤية والرسالة</a>
+                            <a href="#about" onclick="switchTab('about-values', 'about')" class="block px-4 py-3 font-bold text-slate-700 hover:bg-slate-50 hover:text-primary rounded-xl text-sm" data-i18n="tab_values">قيمنا</a>
+                            <a href="#about" onclick="switchTab('about-philosophy', 'about')" class="block px-4 py-3 font-bold text-slate-700 hover:bg-slate-50 hover:text-primary rounded-xl text-sm" data-i18n="tab_philosophy">فلسفة العمل</a>
+                            <a href="#about" onclick="switchTab('about-quality', 'about')" class="block px-4 py-3 font-bold text-slate-700 hover:bg-slate-50 hover:text-primary rounded-xl text-sm" data-i18n="tab_quality">الجودة</a>
+                            <a href="#about" onclick="switchTab('about-safety', 'about')" class="block px-4 py-3 font-bold text-slate-700 hover:bg-slate-50 hover:text-primary rounded-xl text-sm" data-i18n="tab_safety">السلامة</a>
+                            <a href="#about" onclick="switchTab('about-sustainability', 'about')" class="block px-4 py-3 font-bold text-slate-700 hover:bg-slate-50 hover:text-primary rounded-xl text-sm" data-i18n="tab_sustainability">الاستدامة</a>
+                            <a href="#about" onclick="switchTab('about-ethics', 'about')" class="block px-4 py-3 font-bold text-slate-700 hover:bg-slate-50 hover:text-primary rounded-xl text-sm" data-i18n="tab_ethics">أخلاقيات العمل</a>
+                            <a href="#about" onclick="switchTab('about-responsibility', 'about')" class="block px-4 py-3 font-bold text-slate-700 hover:bg-slate-50 hover:text-primary rounded-xl text-sm" data-i18n="tab_responsibility">مسؤوليتنا تجاه المجتمع</a>
+                        </div>
+                    </div>
+
+                    <!-- خدماتنا -->
+                    <div class="relative group h-full flex items-center cursor-pointer">
+                        <a href="#services" class="nav-link text-sm outline-none whitespace-nowrap">
+                            <span data-i18n="nav_services_main">خدماتنا</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div class="dropdown-menu absolute top-[75%] start-0 w-64 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden p-2">
+                            <a href="#services" onclick="switchTab('tab-contracting', 'srv')" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 rounded-xl text-slate-700 hover:text-primary text-sm font-bold">
+                                <i class="fa-solid fa-building text-blue-600"></i> <span data-i18n="nav_sub_contracting">المقاولات والإنشاءات</span>
+                            </a>
+                            <a href="#services" onclick="switchTab('tab-transport', 'srv')" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 rounded-xl text-slate-700 hover:text-primary text-sm font-bold">
+                                <i class="fa-solid fa-truck-fast text-secondary"></i> <span data-i18n="nav_sub_transport">النقل الثقيل واللوجستيات</span>
+                            </a>
+                            <a href="#services" onclick="switchTab('tab-crusher', 'srv')" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 rounded-xl text-slate-700 hover:text-primary text-sm font-bold">
+                                <i class="fa-solid fa-mound text-emerald-600"></i> <span data-i18n="nav_sub_crusher">مواد الكسارات</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- مشاريعنا -->
+                    <div class="relative group h-full flex items-center cursor-pointer">
+                        <a href="#projects" class="nav-link text-sm outline-none whitespace-nowrap">
+                            <span data-i18n="nav_projects_main">مشاريعنا</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div class="dropdown-menu absolute top-[75%] start-0 w-64 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden p-2">
+                            <a href="#projects" onclick="switchTab('proj-buildings', 'proj')" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 rounded-xl text-slate-700 hover:text-primary text-sm font-bold">
+                                <i class="fa-solid fa-city text-primary"></i> <span data-i18n="proj_sub_build">المباني والمنشآت</span>
+                            </a>
+                            <a href="#projects" onclick="switchTab('proj-roads', 'proj')" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 rounded-xl text-slate-700 hover:text-primary text-sm font-bold">
+                                <i class="fa-solid fa-road text-secondary"></i> <span data-i18n="proj_sub_roads">البنية التحتية والطرق</span>
+                            </a>
+                            <a href="#projects" onclick="switchTab('proj-industrial', 'proj')" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 rounded-xl text-slate-700 hover:text-primary text-sm font-bold">
+                                <i class="fa-solid fa-industry text-indigo-500"></i> <span data-i18n="proj_sub_ind">المشاريع الصناعية</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <a href="#responsibility" class="nav-link text-sm whitespace-nowrap" data-i18n="nav_responsibility">مانس جود</a>
+                    <a href="#contact-section" class="nav-link text-sm whitespace-nowrap" data-i18n="nav_contact">تواصل معنا</a>
+                </nav>
+
+                <!-- Tools -->
+                <div class="hidden xl:flex flex-shrink-0 items-center gap-3">
+                    <button id="langToggle" class="px-4 py-2 rounded-xl border border-white/20 bg-white/5 text-sm font-bold text-white hover:bg-white hover:text-primary transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-globe"></i> <span id="langText">English</span>
+                    </button>
+                    <button onclick="document.getElementById('searchModal').classList.toggle('active')" class="w-10 h-10 rounded-xl bg-white/5 border border-white/20 text-white hover:bg-white hover:text-primary transition-all flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <div class="xl:hidden flex items-center gap-3">
+                    <button id="langToggleMobile" class="p-2 font-bold text-white bg-white/10 rounded-lg border border-white/20 text-sm">EN</button>
+                    <button id="mobileMenuBtn" class="text-white p-2 text-2xl focus:outline-none"><i class="fa-solid fa-bars"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden xl:hidden bg-primary border-t border-secondary absolute w-full shadow-2xl pb-6 rounded-b-3xl max-h-[85vh] overflow-y-auto">
+            <div class="px-6 pt-4 space-y-2">
+                <a href="#home" class="block px-4 py-3 font-bold text-slate-200 hover:bg-white/10 rounded-xl" data-i18n="nav_home">الرئيسية</a>
+                <a href="#about" class="block px-4 py-3 font-bold text-slate-200 hover:bg-white/10 rounded-xl" data-i18n="nav_about">من نحن</a>
+                <a href="#services" class="block px-4 py-3 font-bold text-slate-200 hover:bg-white/10 rounded-xl" data-i18n="nav_services_main">خدماتنا</a>
+                <a href="#projects" class="block px-4 py-3 font-bold text-slate-200 hover:bg-white/10 rounded-xl" data-i18n="nav_projects_main">مشاريعنا</a>
+                <a href="#responsibility" class="block px-4 py-3 font-bold text-slate-200 hover:bg-white/10 rounded-xl" data-i18n="nav_responsibility">مانس جود</a>
+                <a href="#contact-section" class="block px-4 py-3 font-bold text-white bg-secondary rounded-xl text-center mt-4" data-i18n="nav_contact">تواصل معنا</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="relative pt-24 h-screen min-h-[650px] flex items-center justify-center overflow-hidden bg-primary">
+        <div class="swiper heroSwiper absolute inset-0 w-full h-full z-0">
+            <div class="swiper-wrapper">
+                <!-- Slide 1: Construction/Rebar -->
+                <div class="swiper-slide relative">
+                    <img src="https://images.unsplash.com/photo-1541888087425-ce81dfc46928?q=80&w=1920&auto=format&fit=crop" class="w-full h-full object-cover" alt="Construction Work">
+                    <div class="absolute inset-0 hero-overlay z-10"></div>
+                    <div class="absolute inset-0 z-20 flex items-center px-6 md:px-24">
+                        <div class="max-w-3xl pt-12">
+                            <span class="inline-flex py-2 px-6 rounded-full bg-secondary text-white text-sm font-bold mb-6 shadow-lg" data-i18n="hero_tag1">رؤية هندسية متطورة</span>
+                            <h2 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight drop-shadow-2xl" style="text-shadow: 0 4px 10px rgba(0,0,0,0.8);" data-i18n="hero_title1">نبني المستقبل بمعايير<br>الجودة الأكاديمية والميدانية</h2>
+                            <p class="text-lg md:text-xl text-slate-200 mb-8 font-medium drop-shadow-lg" data-i18n="hero_desc1">نجمع بين خبرات المقاولات العامة وأحدث النظم الهندسية لتشييد بنية تحتية مستدامة.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2: Heavy Transport -->
+                <div class="swiper-slide relative">
+                    <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1920&auto=format&fit=crop" class="w-full h-full object-cover" alt="Heavy Transport Trucks">
+                    <div class="absolute inset-0 hero-overlay z-10"></div>
+                    <div class="absolute inset-0 z-20 flex items-center px-6 md:px-24">
+                        <div class="max-w-3xl pt-12">
+                            <span class="inline-flex py-2 px-6 rounded-full bg-cyan-600 text-white text-sm font-bold mb-6 shadow-lg" data-i18n="hero_tag2">جاهزية تشغيلية عالية</span>
+                            <h2 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight drop-shadow-2xl" style="text-shadow: 0 4px 10px rgba(0,0,0,0.8);" data-i18n="hero_title2">أسطول نقل ثقيل يغطي<br>كافة المحافظات اليمنية</h2>
+                            <p class="text-lg md:text-xl text-slate-200 mb-8 font-medium drop-shadow-lg" data-i18n="hero_desc2">نقل الخامات الإنشائية، الإسمنت، والمعدات الثقيلة بسرعة وموثوقية عالية.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3: Engineering Planning -->
+                <div class="swiper-slide relative">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1920&auto=format&fit=crop" class="w-full h-full object-cover" alt="Engineering Planning">
+                    <div class="absolute inset-0 hero-overlay z-10"></div>
+                    <div class="absolute inset-0 z-20 flex items-center px-6 md:px-24">
+                        <div class="max-w-3xl pt-12">
+                            <span class="inline-flex py-2 px-6 rounded-full bg-emerald-600 text-white text-sm font-bold mb-6 shadow-lg" data-i18n="hero_tag3">تخطيط وتنفيذ دقيق</span>
+                            <h2 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight drop-shadow-2xl" style="text-shadow: 0 4px 10px rgba(0,0,0,0.8);" data-i18n="hero_title3">مشاريع هندسية متكاملة<br>بأعلى معايير الإتقان</h2>
+                            <p class="text-lg md:text-xl text-slate-200 mb-8 font-medium drop-shadow-lg" data-i18n="hero_desc3">إدارة احترافية للمشاريع الإنشائية، الطرق، والمنشآت الخدمية بكفاءة عالية.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Quick CTA Bar -->
+    <div class="relative z-40 max-w-5xl mx-auto px-4 -mt-12 mb-16">
+        <div class="content-card rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 border-b-4 border-secondary shadow-2xl">
+            <div class="flex items-center gap-5">
+                <div class="w-16 h-16 bg-blue-50 border border-blue-100 text-primary rounded-2xl flex items-center justify-center text-3xl hidden md:flex">
+                    <i class="fa-regular fa-handshake text-secondary"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-1" data-i18n="cta_title">هل لديك مشروع قادم؟</h3>
+                    <p class="text-slate-600 font-medium text-sm md:text-base" data-i18n="cta_desc">تواصل معنا الآن للحصول على استشارة هندسية أو عرض سعر فوري.</p>
+                </div>
+            </div>
+            <a href="https://wa.me/967777077330" target="_blank" class="w-full md:w-auto text-center bg-primary hover:bg-slate-800 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-lg transition-transform hover:-translate-y-1 flex items-center justify-center gap-3 whitespace-nowrap">
+                <span data-i18n="cta_btn">اطلب تسعيرة الآن</span>
+                <i class="fa-brands fa-whatsapp text-green-400 text-2xl"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Statistics Counters (Dark/Elegant Theme) -->
+    <section class="py-8 relative">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-slate-800 border-b-4 border-secondary p-8 rounded-3xl shadow-xl text-center group fade-in-up hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-16 h-16 mx-auto bg-white/5 text-secondary rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <div class="text-4xl font-black text-white mb-2 font-english flex justify-center items-center gap-1">
+                        <span class="text-secondary">+</span><span class="counter" data-target="15">0</span>
+                    </div>
+                    <p class="text-slate-400 font-bold text-sm" data-i18n="stat_years">عاماً من الخبرة</p>
+                </div>
+                <div class="bg-slate-800 border-b-4 border-blue-500 p-8 rounded-3xl shadow-xl text-center group fade-in-up hover:-translate-y-2 transition-transform duration-300" style="transition-delay: 0.1s;">
+                    <div class="w-16 h-16 mx-auto bg-white/5 text-blue-400 rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-building-circle-check"></i>
+                    </div>
+                    <div class="text-4xl font-black text-white mb-2 font-english flex justify-center items-center gap-1">
+                        <span class="text-blue-400">+</span><span class="counter" data-target="120">0</span>
+                    </div>
+                    <p class="text-slate-400 font-bold text-sm" data-i18n="stat_projects">مشروع منجز</p>
+                </div>
+                <div class="bg-slate-800 border-b-4 border-amber-500 p-8 rounded-3xl shadow-xl text-center group fade-in-up hover:-translate-y-2 transition-transform duration-300" style="transition-delay: 0.2s;">
+                    <div class="w-16 h-16 mx-auto bg-white/5 text-amber-400 rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-truck-moving"></i>
+                    </div>
+                    <div class="text-4xl font-black text-white mb-2 font-english flex justify-center items-center gap-1">
+                        <span class="text-amber-400">+</span><span class="counter" data-target="50">0</span>
+                    </div>
+                    <p class="text-slate-400 font-bold text-sm" data-i18n="stat_fleet">شاحنة وآلية ومعدة</p>
+                </div>
+                <div class="bg-slate-800 border-b-4 border-emerald-500 p-8 rounded-3xl shadow-xl text-center group fade-in-up hover:-translate-y-2 transition-transform duration-300" style="transition-delay: 0.3s;">
+                    <div class="w-16 h-16 mx-auto bg-white/5 text-emerald-400 rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-handshake-angle"></i>
+                    </div>
+                    <div class="text-4xl font-black text-white mb-2 font-english flex justify-center items-center gap-1">
+                        <span class="text-emerald-400">+</span><span class="counter" data-target="200">0</span>
+                    </div>
+                    <p class="text-slate-400 font-bold text-sm" data-i18n="stat_clients">شريك نجاح محلي</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section (Includes Founder + 8 other sections) -->
+    <section id="about" class="py-24 relative">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <span class="text-secondary font-bold tracking-wider text-sm uppercase mb-3 block" data-i18n="about_tag">الإطار التعريفي</span>
+                <h2 class="text-3xl md:text-5xl font-black text-primary mb-6 leading-tight" data-i18n="about_title">كيان اقتصادي يجمع بين التنمية الميدانية والرؤية الأكاديمية</h2>
+                <p class="text-slate-700 text-lg leading-relaxed font-medium" data-i18n="about_desc">
+                    تُمثل مؤسسة الدكتور منصور العبدي للمقاولات والنقل أحد الكيانات الاقتصادية والخدمية البارزة. نجمع بين تخصصات المقاولات العامة، التوريدات الإنشائية، والخدمات اللوجستية الثقيلة، مدعومين بخبرات أكاديمية متينة.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-7xl mx-auto fade-in-up">
+                
+                <!-- شبكة التبويبات الـ 9 الجانبية -->
+                <div class="lg:col-span-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-3 h-full">
+                    <button onclick="switchTab('about-founder', 'about')" id="btn-about-founder" class="tab-btn-about active tab-btn-custom w-full rounded-2xl font-bold bg-white text-slate-800 shadow-sm flex flex-col items-center justify-center gap-3 py-5">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center text-2xl bg-blue-50 text-blue-600"><i class="fa-solid fa-user-tie"></i></div>
+                        <span class="text-sm font-black text-center" data-i18n="tab_founder">المؤسس</span>
+                    </button>
+                    <button onclick="switchTab('about-vision-mission', 'about')" id="btn-about-vision-mission" class="tab-btn-about tab-btn-custom w-full rounded-2xl font-bold bg-white text-slate-800 shadow-sm flex flex-col items-center justify-center gap-3 py-5">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center text-2xl bg-indigo-50 text-indigo-600"><i class="fa-solid fa-eye"></i></div>
+                        <span class="text-sm font-black text-center" data-i18n="tab_vis_mis">الرؤية والرسالة</span>
+                    </button>
+                    <button onclick="switchTab('about-values', 'about')" id="btn-about-values" class="tab-btn-about tab-btn-custom w-full rounded-2xl font-bold bg-white text-slate-800 shadow-sm flex flex-col items-center justify-center gap-3 py-5">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center text-2xl bg-emerald-50 text-emerald-600"><i class="fa-solid fa-gem"></i></div>
+                        <span class="text-sm font-black text-center" data-i18n="tab_values">قيمنا</span>
+                    </button>
+                    <button onclick="switchTab('about-philosophy', 'about')" id="btn-about-philosophy" class="tab-btn-about tab-btn-custom w-full rounded-2xl font-bold bg-white text-slate-800 shadow-sm flex flex-col items-center justify-center gap-3 py-5">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center text-2xl bg-amber-50 text-amber-500"><i class="fa-solid fa-lightbulb"></i></div>
+                        <span class="text-sm font-black text-center" data-i18n="tab_philosophy">فلسفة العمل</span>
+                    </button>
+                    <button onclick="switchTab('about-quality', 'about')" id="btn-about-quality" class="tab-btn-about tab-btn-custom w-full rounded-2xl font-bold bg-white text-slate-800 shadow-sm flex flex-col items-center justify-center gap-3 py-5">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center text-2xl bg-purple-50 text-purple-600"><i class="fa-solid fa-medal"></i></div>
+                        <span class="text-sm font-black text-center" data-i18n="tab_quality">الجودة</span>
+                    </button>
+                    <button onclick="switchTab('about-safety', 'about')" id="btn-about-safety" class="tab-btn-about tab-btn-custom w-full rounded-2xl font-bold bg-white text-slate-800 shadow-sm flex flex-col items-center justify-center gap-3 py-5">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center text-2xl bg-orange-50 text-orange-500"><i class="fa-solid fa-hard-hat"></i></div>
+                        <span class="text-sm font-black text-center" data-i18n="tab_safety">السلامة</span>
+                    </button>
+                    <button onclick="switchTab('about-sustainability', 'about')" id="btn-about-sustainability" class="tab-btn-about tab-btn-custom w-full rounded-2xl font-bold bg-white text-slate-800 shadow-sm flex flex-col items-center justify-center gap-3 py-5">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center text-2xl bg-green-50 text-green-600"><i class="fa-solid fa-leaf"></i></div>
+                        <span class="text-sm font-black text-center" data-i18n="tab_sustainability">الاستدامة</span>
+                    </button>
+                    <button onclick="switchTab('about-ethics', 'about')" id="btn-about-ethics" class="tab-btn-about tab-btn-custom w-full rounded-2xl font-bold bg-white text-slate-800 shadow-sm flex flex-col items-center justify-center gap-3 py-5">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center text-2xl bg-teal-50 text-teal-600"><i class="fa-solid fa-scale-balanced"></i></div>
+                        <span class="text-sm font-black text-center" data-i18n="tab_ethics">أخلاقيات العمل</span>
+                    </button>
+                    <button onclick="switchTab('about-responsibility', 'about')" id="btn-about-responsibility" class="tab-btn-about tab-btn-custom w-full rounded-2xl font-bold bg-white text-slate-800 shadow-sm flex flex-col items-center justify-center gap-3 py-5 lg:col-span-2">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center text-2xl bg-cyan-50 text-cyan-600"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                        <span class="text-sm font-black text-center" data-i18n="tab_responsibility">مسؤوليتنا المجتمعية</span>
+                    </button>
+                </div>
+
+                <!-- شاشة العرض الجانبية -->
+                <div class="lg:col-span-8 content-card rounded-[2.5rem] p-8 lg:p-12 h-full min-h-[500px] flex flex-col justify-center bg-white shadow-2xl">
+                    
+                    <!-- 1. المؤسس (مع الصورة mansor_2.webp) -->
+                    <div id="about-founder" class="tab-content-about block tab-content-anim h-full">
+                        <div class="flex flex-col md:flex-row gap-10 items-center h-full justify-center">
+                            <div class="w-full md:w-5/12 text-center shrink-0">
+                                <div class="rounded-3xl overflow-hidden shadow-[0_20px_50px_-12px_rgba(15,23,42,0.3)] border-8 border-white bg-slate-100 inline-block relative w-64 h-80 mx-auto">
+                                    <img src="mansor_2.webp" onerror="this.src='https://placehold.co/600x800/0F172A/FFF?text=Dr+Mansour'" alt="د. منصور صالح العبدي" class="w-full h-full object-cover object-top">
+                                </div>
+                                <h3 class="text-2xl font-black text-primary mt-6" data-i18n="founder_name">د. منصور صالح العبدي</h3>
+                                <p class="text-secondary font-bold text-base mt-2" data-i18n="founder_title_sub">أكاديمي وباحث يمني</p>
+                            </div>
+                            <div class="w-full md:w-7/12">
+                                <h3 class="text-3xl font-black text-primary mb-6 border-s-4 border-blue-600 ps-4" data-i18n="founder_title">عن المؤسس</h3>
+                                <div class="space-y-4 text-slate-700 text-base leading-relaxed text-justify font-medium mb-8">
+                                    <p data-i18n="founder_p1">الدكتور منصور صالح محمد العبدي أكاديمي وباحث يمني متخصص في الإدارة والتخطيط التربوي وإدارة الجودة، ويتمتع بخبرة أكاديمية وبحثية وإدارية في مجالات تطوير المؤسسات، والتخطيط الاستراتيجي، والتحول الرقمي والحوكمة.</p>
+                                    <p data-i18n="founder_p2">يحمل درجة الدكتوراه من جامعة أم درمان الإسلامية، ويعمل أستاذا مشاركا وعضو هيئة تدريس بجامعة عمران، كما يشغل عددا من المهام العلمية والإدارية، ويشارك في الإشراف على الرسائل العلمية والبحث والتطوير المؤسسي.</p>
+                                    <p data-i18n="founder_p3">وتتركز اهتماماته في الجودة، والإدارة الإلكترونية، وتطوير التعليم العالي، والاستثمار في التعليم، وبناء المؤسسات وفق أساليب الإدارة الحديثة.</p>
+                                </div>
+                                <div class="flex flex-wrap gap-3">
+                                    <span class="px-4 py-2 bg-blue-50 text-blue-700 border border-blue-200 rounded-full font-bold text-xs" data-i18n="tag_exp">خبرة أكاديمية</span>
+                                    <span class="px-4 py-2 bg-amber-50 text-amber-700 border border-amber-200 rounded-full font-bold text-xs" data-i18n="tag_vision">رؤية إدارية</span>
+                                    <span class="px-4 py-2 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full font-bold text-xs" data-i18n="tag_dev">تطوير مؤسسي</span>
+                                    <span class="px-4 py-2 bg-purple-50 text-purple-700 border border-purple-200 rounded-full font-bold text-xs" data-i18n="tag_quality">جودة واستدامة</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. الرؤية والرسالة -->
+                    <div id="about-vision-mission" class="tab-content-about hidden tab-content-anim h-full">
+                        <h3 class="text-2xl font-black text-primary mb-4 border-s-4 border-indigo-600 ps-4" data-i18n="vis_mis_title">الرؤية والرسالة</h3>
+                        <div class="space-y-4 mb-6 text-justify">
+                            <p class="text-slate-700 leading-relaxed text-base font-medium" data-i18n="vision_desc"><strong>رؤيتنا:</strong> الريادة المبتكرة في قطاعات المقاولات والنقل، وتقديم نموذج يُحتذى به في التنمية المستدامة والجودة الهندسية محلياً وإقليمياً، مع تبني أحدث النظم التقنية.</p>
+                            <p class="text-slate-700 leading-relaxed text-base font-medium" data-i18n="mission_desc"><strong>رسالتنا:</strong> تنفيذ مشاريع البنية التحتية وإدارة العمليات اللوجستية بأعلى معايير الجودة الأكاديمية والمهنية لضمان رضا شركائنا واستدامة التنمية المجتمعية.</p>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop" alt="Vision and Mission" class="w-full h-56 object-cover rounded-3xl shadow-md">
+                    </div>
+
+                    <!-- 3. القيم (مع صورة معبرة بحجم خفيف) -->
+                    <div id="about-values" class="tab-content-about hidden tab-content-anim h-full">
+                        <h3 class="text-2xl font-black text-primary mb-4 border-s-4 border-emerald-500 ps-4" data-i18n="values_title">قيمنا المؤسسية</h3>
+                        <ul class="space-y-4 text-slate-700 font-bold text-base mb-6">
+                            <li class="flex items-center"><i class="fa-solid fa-check-circle text-emerald-500 me-3 text-2xl"></i> <span data-i18n="val1">الجودة والتميز في التنفيذ الهندسي.</span></li>
+                            <li class="flex items-center"><i class="fa-solid fa-check-circle text-emerald-500 me-3 text-2xl"></i> <span data-i18n="val2">الشفافية المطلقة والنزاهة مع العملاء.</span></li>
+                            <li class="flex items-center"><i class="fa-solid fa-check-circle text-emerald-500 me-3 text-2xl"></i> <span data-i18n="val3">التطوير المستمر واعتماد التكنولوجيا الحديثة.</span></li>
+                            <li class="flex items-center"><i class="fa-solid fa-check-circle text-emerald-500 me-3 text-2xl"></i> <span data-i18n="val4">المسؤولية المجتمعية والشراكة الأكاديمية.</span></li>
+                        </ul>
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop" alt="Values" class="w-full h-48 object-cover rounded-3xl shadow-md">
+                    </div>
+
+                    <!-- 4. فلسفة العمل -->
+                    <div id="about-philosophy" class="tab-content-about hidden tab-content-anim h-full">
+                        <h3 class="text-2xl font-black text-primary mb-4 border-s-4 border-amber-500 ps-4" data-i18n="philosophy_title">فلسفة العمل</h3>
+                        <p class="text-slate-700 leading-relaxed text-base font-medium mb-6 text-justify" data-i18n="philosophy_desc">نؤمن بأن العمل الهندسي والإنشائي ليس مجرد تشييد للمباني، بل هو فن وعلم يتطلب التخطيط الدقيق، الرؤية الثاقبة، والشراكة المفتوحة مع عملائنا. فلسفتنا ترتكز على إنجاز مشاريع مستدامة تخدم الأجيال القادمة.</p>
+                        <img src="https://images.unsplash.com/photo-1508873699372-7aeab60b44ab?q=80&w=800&auto=format&fit=crop" alt="Philosophy" class="w-full h-56 object-cover rounded-3xl shadow-md">
+                    </div>
+
+                    <!-- 5. الجودة -->
+                    <div id="about-quality" class="tab-content-about hidden tab-content-anim h-full">
+                        <h3 class="text-2xl font-black text-primary mb-4 border-s-4 border-purple-500 ps-4" data-i18n="quality_title">معايير الجودة</h3>
+                        <p class="text-slate-700 leading-relaxed text-base font-medium mb-6 text-justify" data-i18n="quality_desc">نلتزم التزاماً صارماً بتطبيق أنظمة إدارة الجودة الشاملة (TQM) في كافة مراحل العمل، بدءاً من الفحوصات المخبرية واختيار المواد الخام، وصولاً إلى أدق تفاصيل التشطيبات والتسليم النهائي للمشروع.</p>
+                        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=800&auto=format&fit=crop" alt="Quality" class="w-full h-56 object-cover rounded-3xl shadow-md">
+                    </div>
+
+                    <!-- 6. السلامة -->
+                    <div id="about-safety" class="tab-content-about hidden tab-content-anim h-full">
+                        <h3 class="text-2xl font-black text-primary mb-4 border-s-4 border-orange-500 ps-4" data-i18n="safety_title">السلامة المهنية</h3>
+                        <p class="text-slate-700 leading-relaxed text-base font-medium mb-6 text-justify" data-i18n="safety_desc">نضع سلامة كوادرنا البشرية وشركائنا في مواقع العمل على رأس أولوياتنا المطلقة. نطبق أحدث بروتوكولات السلامة والصحة المهنية لضمان بيئة عمل آمنة وخالية من المخاطر في جميع مشاريعنا.</p>
+                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800&auto=format&fit=crop" alt="Safety" class="w-full h-56 object-cover rounded-3xl shadow-md">
+                    </div>
+
+                    <!-- 7. الاستدامة -->
+                    <div id="about-sustainability" class="tab-content-about hidden tab-content-anim h-full">
+                        <h3 class="text-2xl font-black text-primary mb-4 border-s-4 border-green-500 ps-4" data-i18n="sustainability_title">الاستدامة البيئية</h3>
+                        <p class="text-slate-700 leading-relaxed text-base font-medium mb-6 text-justify" data-i18n="sustainability_desc">نسعى بشكل حثيث لتقليل الأثر البيئي لعملياتنا من خلال تبني تقنيات البناء الحديثة، وتحسين كفاءة استهلاك الموارد، واستخدام مواد مستدامة تحافظ على البيئة الطبيعية لليمن.</p>
+                        <img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?q=80&w=800&auto=format&fit=crop" alt="Sustainability" class="w-full h-56 object-cover rounded-3xl shadow-md">
+                    </div>
+
+                    <!-- 8. أخلاقيات العمل -->
+                    <div id="about-ethics" class="tab-content-about hidden tab-content-anim h-full">
+                        <h3 class="text-2xl font-black text-primary mb-4 border-s-4 border-teal-500 ps-4" data-i18n="ethics_title">أخلاقيات العمل</h3>
+                        <p class="text-slate-700 leading-relaxed text-base font-medium mb-6 text-justify" data-i18n="ethics_desc">النزاهة، الشفافية، والالتزام الدقيق بالمواعيد هي الركائز الأساسية التي تحكم كافة تعاملاتنا وعقودنا مع العملاء والموردين. نحن نبني ثقة متبادلة تفوق بناء الهياكل.</p>
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=800&auto=format&fit=crop" alt="Ethics" class="w-full h-56 object-cover rounded-3xl shadow-md">
+                    </div>
+
+                    <!-- 9. مسؤوليتنا -->
+                    <div id="about-responsibility" class="tab-content-about hidden tab-content-anim h-full">
+                        <h3 class="text-2xl font-black text-primary mb-4 border-s-4 border-cyan-600 ps-4" data-i18n="responsibility_title">مسؤوليتنا المجتمعية</h3>
+                        <p class="text-slate-700 leading-relaxed text-base font-medium mb-6 text-justify" data-i18n="responsibility_desc">نحن جزء لا يتجزأ من النسيج المجتمعي. نلتزم بالمساهمة الفاعلة في تنمية المجتمع المحلي، ودعم المبادرات التعليمية، وتوفير فرص التدريب والتوظيف المستمر للكوادر الوطنية الشابة.</p>
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=800&auto=format&fit=crop" alt="Social Responsibility" class="w-full h-56 object-cover rounded-3xl shadow-md">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 relative bg-white border-y border-slate-200">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <span class="text-secondary font-bold text-sm uppercase tracking-wider mb-2 block" data-i18n="catalog_tag">دليل العمليات</span>
+                <h2 class="text-3xl md:text-5xl font-black text-primary mb-4" data-i18n="services_title">خدماتنا التشغيلية</h2>
+                <p class="text-slate-700 text-lg font-medium" data-i18n="catalog_desc">استعرض قدراتنا التشغيلية في مختلف القطاعات الهندسية واللوجستية.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-12 fade-in-up">
+                <button onclick="switchTab('tab-contracting', 'srv')" id="btn-tab-contracting" class="tab-btn-srv active tab-btn-custom px-8 py-4 rounded-2xl font-bold text-slate-800 shadow-sm flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-2xl"><i class="fa-solid fa-building"></i></div> <span data-i18n="nav_sub_contracting">المقاولات والإنشاءات</span>
+                </button>
+                <button onclick="switchTab('tab-transport', 'srv')" id="btn-tab-transport" class="tab-btn-srv tab-btn-custom px-8 py-4 rounded-2xl font-bold text-slate-800 shadow-sm flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-amber-50 text-secondary flex items-center justify-center text-2xl"><i class="fa-solid fa-truck-fast"></i></div> <span data-i18n="nav_sub_transport">الأسطول والنقل</span>
+                </button>
+                <button onclick="switchTab('tab-crusher', 'srv')" id="btn-tab-crusher" class="tab-btn-srv tab-btn-custom px-8 py-4 rounded-2xl font-bold text-slate-800 shadow-sm flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl"><i class="fa-solid fa-mound"></i></div> <span data-i18n="nav_sub_crusher">مواد الكسارات</span>
+                </button>
+            </div>
+
+            <!-- Contracting -->
+            <div id="tab-contracting" class="tab-content-srv block tab-content-anim">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="content-card rounded-3xl overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop" class="w-full h-56 object-cover" alt="Architecture">
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold text-primary mb-3" data-i18n="srv_arch">التصميم والإشراف</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed font-medium" data-i18n="srv_arch_desc">إعداد المخططات الهندسية، إدارة تكاليف المشاريع للمنشآت الإدارية والتعليمية والسكنية.</p>
+                        </div>
+                    </div>
+                    <div class="content-card rounded-3xl overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=800&auto=format&fit=crop" class="w-full h-56 object-cover" alt="Civil Concrete">
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold text-primary mb-3" data-i18n="srv_civil">الهندسة المدنية</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed font-medium" data-i18n="srv_civil_desc">صب الخرسانات المسلحة، التسويات الإنشائية، وأعمال الحفريات لمشاريع البنية التحتية.</p>
+                        </div>
+                    </div>
+                    <div class="content-card rounded-3xl overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800&auto=format&fit=crop" class="w-full h-56 object-cover" alt="Engineering Tech">
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold text-primary mb-3" data-i18n="srv_advanced">الأنظمة المتقدمة</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed font-medium" data-i18n="srv_advanced_desc">تضمين تطبيقات الأتمتة والميكاترونيكس لتجهيز المباني الحديثة والمرافق الذكية.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transport (صورة نقل الآليات والمعدات واقعية ومناسبة للمقاولات) -->
+            <div id="tab-transport" class="tab-content-srv hidden tab-content-anim">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="content-card rounded-3xl flex flex-col sm:flex-row overflow-hidden">
+                        <div class="w-full sm:w-2/5 h-64 sm:h-auto overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Dump Truck">
+                        </div>
+                        <div class="p-8 flex flex-col justify-center sm:w-3/5">
+                            <div class="mb-4 text-amber-600 text-3xl"><i class="fa-solid fa-truck-moving"></i></div>
+                            <h3 class="text-2xl font-bold text-primary mb-3" data-i18n="srv_materials">نقل الخامات الإنشائية</h3>
+                            <p class="text-slate-600 leading-relaxed font-medium" data-i18n="srv_materials_desc">شاحنات ثقيلة ومقطورات لنقل الركام، الرمل، والإسمنت المكيس والسائب بين المصانع والمواقع.</p>
+                        </div>
+                    </div>
+                    <div class="content-card rounded-3xl flex flex-col sm:flex-row overflow-hidden">
+                        <div class="w-full sm:w-2/5 h-64 sm:h-auto overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1579412124523-289b418a09f8?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Heavy Machinery Transport">
+                        </div>
+                        <div class="p-8 flex flex-col justify-center sm:w-3/5">
+                            <div class="mb-4 text-blue-600 text-3xl"><i class="fa-solid fa-tractor"></i></div>
+                            <h3 class="text-2xl font-bold text-primary mb-3" data-i18n="srv_machinery">نقل الآليات والمعدات</h3>
+                            <p class="text-slate-600 leading-relaxed font-medium" data-i18n="srv_machinery_desc">سطحات ثقيلة (النقل المنخفض) لنقل الجرافات والحفارات ومعدات الرصف عبر الطرق الإقليمية.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Crusher (صورة إنتاج الركام والفحوصات واقعية ومعبرة) -->
+            <div id="tab-crusher" class="tab-content-srv hidden tab-content-anim">
+                <div class="content-card rounded-3xl p-10 flex flex-col md:flex-row gap-10 items-center">
+                    <div class="w-full md:w-1/2">
+                        <h3 class="text-3xl font-black text-primary mb-6 border-s-4 border-emerald-500 ps-4" data-i18n="crusher_title">إنتاج الركام والفحوصات الجيولوجية</h3>
+                        <p class="text-slate-700 text-lg mb-8 leading-relaxed font-medium" data-i18n="crusher_desc">نمتلك كسارات ومحاجر توفر إمداداً ثابتاً من الخرسانة والركام الحجري. نحرص على إبراز الفحوصات المخبرية التي تطابق المقاييس الهندسية لطمأنة المقاولين وشركاء النجاح.</p>
+                        <div class="flex gap-4">
+                            <div class="flex items-center gap-4 bg-slate-50 px-6 py-4 rounded-2xl border border-slate-200 flex-1 shadow-sm">
+                                <i class="fa-solid fa-cubes text-3xl text-secondary"></i>
+                                <div><h4 class="font-bold text-slate-900" data-i18n="mat_gravel">ركام كسارات</h4><p class="text-xs text-slate-500 font-bold" data-i18n="mat_size">جميع المقاسات</p></div>
+                            </div>
+                            <div class="flex items-center gap-4 bg-slate-50 px-6 py-4 rounded-2xl border border-slate-200 flex-1 shadow-sm">
+                                <i class="fa-solid fa-droplet text-3xl text-cyan-600"></i>
+                                <div><h4 class="font-bold text-slate-900" data-i18n="mat_sand">نيس / رمل</h4><p class="text-xs text-slate-500 font-bold" data-i18n="mat_pure">نقي ومفحوص</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 overflow-hidden rounded-3xl relative h-80 shadow-inner">
+                        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Crusher Gravel and Stones">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 relative bg-slate-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <span class="text-secondary font-bold text-sm uppercase tracking-wider mb-2 block" data-i18n="portfolio_tag">معرض الأعمال</span>
+                <h2 class="text-3xl md:text-5xl font-black text-primary mb-4" data-i18n="portfolio_title">مشاريعنا المنجزة</h2>
+                <p class="text-slate-700 text-lg font-medium" data-i18n="portfolio_desc">تصفح أبرز الأعمال الإنشائية ومشاريع البنية التحتية التي تم تنفيذها.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-12 fade-in-up">
+                <button onclick="switchTab('proj-buildings', 'proj')" id="btn-proj-buildings" class="tab-btn-proj active tab-btn-custom px-8 py-4 rounded-2xl font-bold bg-white text-slate-800 shadow-md flex items-center gap-3">
+                    <i class="fa-solid fa-city text-primary text-xl"></i> <span data-i18n="proj_sub_build">المباني والمنشآت</span>
+                </button>
+                <button onclick="switchTab('proj-roads', 'proj')" id="btn-proj-roads" class="tab-btn-proj tab-btn-custom px-8 py-4 rounded-2xl font-bold bg-white text-slate-800 shadow-md flex items-center gap-3">
+                    <i class="fa-solid fa-road text-secondary text-xl"></i> <span data-i18n="proj_sub_roads">البنية التحتية والطرق</span>
+                </button>
+                <button onclick="switchTab('proj-industrial', 'proj')" id="btn-proj-industrial" class="tab-btn-proj tab-btn-custom px-8 py-4 rounded-2xl font-bold bg-white text-slate-800 shadow-md flex items-center gap-3">
+                    <i class="fa-solid fa-industry text-purple-600 text-xl"></i> <span data-i18n="proj_sub_ind">المشاريع الصناعية</span>
+                </button>
+            </div>
+
+            <div class="content-card rounded-3xl p-8 md:p-12 fade-in-up max-w-5xl mx-auto">
+                <!-- Buildings (مبنى يمني يتم إنشاؤه واقعي) -->
+                <div id="proj-buildings" class="tab-content-proj block tab-content-anim">
+                    <div class="flex flex-col md:flex-row items-center gap-10">
+                        <div class="md:w-1/2">
+                            <h3 class="text-3xl font-black text-primary mb-4 border-s-4 border-primary ps-4" data-i18n="proj_build_title">المباني السكنية والتجارية</h3>
+                            <p class="text-slate-700 leading-relaxed text-lg font-medium mb-6" data-i18n="proj_build_desc">تشييد مجمعات إدارية وسكنية حديثة تواكب التطور العمراني، مع الاهتمام الدقيق بأعمال التشطيبات والواجهات المعمارية المبتكرة.</p>
+                        </div>
+                        <div class="md:w-1/2 w-full">
+                            <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?q=80&w=800&auto=format&fit=crop" class="w-full h-72 object-cover rounded-3xl shadow-lg" alt="Building Construction">
+                        </div>
+                    </div>
+                </div>
+                <!-- Roads (طريق يمني يتم تمهيده وسفلته واقعي) -->
+                <div id="proj-roads" class="tab-content-proj hidden tab-content-anim">
+                    <div class="flex flex-col md:flex-row items-center gap-10">
+                        <div class="md:w-1/2">
+                            <h3 class="text-3xl font-black text-primary mb-4 border-s-4 border-secondary ps-4" data-i18n="proj_roads_title">البنية التحتية وتمهيد الطرق</h3>
+                            <p class="text-slate-700 leading-relaxed text-lg font-medium mb-6" data-i18n="proj_roads_desc">تنفيذ مشاريع شق الطرق وتسويتها، وإنشاء عبارات المياه الجبلية، لدعم ربط المدن والمناطق الريفية ببعضها بكفاءة وموثوقية.</p>
+                        </div>
+                        <div class="md:w-1/2 w-full">
+                            <img src="https://images.unsplash.com/photo-1545972154-9bb223aac798?q=80&w=800&auto=format&fit=crop" class="w-full h-72 object-cover rounded-3xl shadow-lg" alt="Road Paving">
+                        </div>
+                    </div>
+                </div>
+                <!-- Industrial -->
+                <div id="proj-industrial" class="tab-content-proj hidden tab-content-anim">
+                    <div class="flex flex-col md:flex-row items-center gap-10">
+                        <div class="md:w-1/2">
+                            <h3 class="text-3xl font-black text-primary mb-4 border-s-4 border-purple-500 ps-4" data-i18n="proj_ind_title">المرافق والمشاريع الصناعية</h3>
+                            <p class="text-slate-700 leading-relaxed text-lg font-medium mb-6" data-i18n="proj_ind_desc">تجهيز المواقع الصناعية، وتهيئة منصات العمل لمحطات الطاقة والمصانع باستخدام أحدث المعدات لضمان المتانة العالية للأرضيات والأساسات.</p>
+                        </div>
+                        <div class="md:w-1/2 w-full">
+                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop" class="w-full h-72 object-cover rounded-3xl shadow-lg" alt="Industrial Construction">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="responsibility" class="py-24 relative bg-white border-b border-slate-200">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <span class="text-secondary font-bold text-sm uppercase tracking-wider mb-2 block" data-i18n="resp_tag">مؤسسة مانس جود التعليمية</span>
+                <h2 class="text-3xl md:text-5xl font-black text-primary mb-4" data-i18n="resp_title">الشراكة الأكاديمية والمجتمعية</h2>
+                <p class="text-slate-700 text-lg font-medium" data-i18n="resp_desc">نؤمن بأن الاستثمار في الرأسمال البشري مكمل أساسي للاستثمار في البنية التحتية.</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-10">
+                <div class="lg:w-1/3 flex flex-col gap-4 fade-in-up">
+                    <button onclick="switchTab('resp-books', 'resp')" id="btn-resp-books" class="tab-btn-resp active tab-btn-custom px-6 py-5 rounded-2xl text-slate-800 shadow-sm flex items-center gap-4">
+                        <div class="w-14 h-14 shrink-0 bg-blue-50 rounded-full flex items-center justify-center text-3xl text-blue-600"><i class="fa-solid fa-book-open"></i></div>
+                        <div class="text-start"><h4 class="font-bold text-lg" data-i18n="tab_books">طباعة الكتب الأكاديمية</h4></div>
+                    </button>
+                    <button onclick="switchTab('resp-awards', 'resp')" id="btn-resp-awards" class="tab-btn-resp tab-btn-custom px-6 py-5 rounded-2xl text-slate-800 shadow-sm flex items-center gap-4">
+                        <div class="w-14 h-14 shrink-0 bg-amber-50 rounded-full flex items-center justify-center text-3xl text-amber-500"><i class="fa-solid fa-award"></i></div>
+                        <div class="text-start"><h4 class="font-bold text-lg" data-i18n="tab_awards">جوائز التميز التربوي</h4></div>
+                    </button>
+                    <button onclick="switchTab('resp-jobs', 'resp')" id="btn-resp-jobs" class="tab-btn-resp tab-btn-custom px-6 py-5 rounded-2xl text-slate-800 shadow-sm flex items-center gap-4">
+                        <div class="w-14 h-14 shrink-0 bg-emerald-50 rounded-full flex items-center justify-center text-3xl text-emerald-500"><i class="fa-solid fa-users-viewfinder"></i></div>
+                        <div class="text-start"><h4 class="font-bold text-lg" data-i18n="tab_jobs">التدريب والتوظيف</h4></div>
+                    </button>
+                    <button onclick="switchTab('resp-initiatives', 'resp')" id="btn-resp-initiatives" class="tab-btn-resp tab-btn-custom px-6 py-5 rounded-2xl text-slate-800 shadow-sm flex items-center gap-4">
+                        <div class="w-14 h-14 shrink-0 bg-purple-50 rounded-full flex items-center justify-center text-3xl text-purple-500"><i class="fa-solid fa-lightbulb"></i></div>
+                        <div class="text-start"><h4 class="font-bold text-lg" data-i18n="tab_initiatives">دعم المبادرات والمشاريع</h4></div>
+                    </button>
+                </div>
+                
+                <div class="lg:w-2/3 fade-in-up">
+                    <div class="content-card rounded-[2.5rem] p-8 h-full min-h-[450px] relative overflow-hidden flex flex-col justify-center shadow-xl">
+                        <!-- Books -->
+                        <div id="resp-books" class="tab-content-resp block tab-content-anim w-full">
+                            <div class="relative h-64 md:h-80 rounded-3xl overflow-hidden mb-6">
+                                <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Academic Books in Library">
+                            </div>
+                            <h3 class="text-2xl font-bold text-primary mb-3 border-s-4 border-blue-600 ps-4" data-i18n="resp_books_title">إصدارات الباحثين والطلاب</h3>
+                            <p class="text-slate-700 text-lg leading-relaxed font-medium" data-i18n="resp_books_desc">تمويل طباعة الإصدارات للباحثين والطلاب الجامعيين لدعم مسيرتهم الأكاديمية (مثل كتاب: حكايات نحوية)، ضمن جهود مؤسسة مانس جود للنهوض بالتعليم.</p>
+                        </div>
+                        <!-- Awards (صورة جوائز التميز التربوي معبرة وخالية من النساء) -->
+                        <div id="resp-awards" class="tab-content-resp hidden tab-content-anim w-full">
+                            <div class="relative h-64 md:h-80 rounded-3xl overflow-hidden mb-6">
+                                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Educational Excellence Awards">
+                            </div>
+                            <h3 class="text-2xl font-bold text-primary mb-3 border-s-4 border-amber-500 ps-4" data-i18n="resp_awards_title">تكريم الإبداع التربوي</h3>
+                            <p class="text-slate-700 text-lg leading-relaxed font-medium" data-i18n="resp_awards_desc">رعاية حفلات التكريم للطلاب المتفوقين في الجامعات، وتوزيع جوائز الإتقان السنوية للمعلمين والتربويين لتحفيز البيئة التعليمية.</p>
+                        </div>
+                        <!-- Jobs -->
+                        <div id="resp-jobs" class="tab-content-resp hidden tab-content-anim w-full">
+                            <div class="relative h-64 md:h-80 rounded-3xl overflow-hidden mb-6">
+                                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Male Engineer Training">
+                            </div>
+                            <h3 class="text-2xl font-bold text-primary mb-3 border-s-4 border-emerald-500 ps-4" data-i18n="resp_jobs_title">حاضنة هندسية وتوظيف</h3>
+                            <p class="text-slate-700 text-lg leading-relaxed font-medium mb-4" data-i18n="resp_jobs_desc">نوفر حاضنة تدريبية للمهندسين حديثي التخرج، ونستقبل السير الذاتية إلكترونياً لتبسيط وتسهيل إجراءات التوظيف واستقطاب الكفاءات.</p>
+                            <a href="https://wa.me/967777077330" target="_blank" class="inline-flex px-6 py-3 bg-primary text-white rounded-xl font-bold hover:bg-slate-800 transition-colors shadow-sm">
+                                <span data-i18n="btn_submit_cv">قدم سيرتك الذاتية</span>
+                            </a>
+                        </div>
+                        <!-- Initiatives -->
+                        <div id="resp-initiatives" class="tab-content-resp hidden tab-content-anim w-full">
+                            <div class="relative h-64 md:h-80 rounded-3xl overflow-hidden mb-6">
+                                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Students Initiatives">
+                            </div>
+                            <h3 class="text-2xl font-bold text-primary mb-3 border-s-4 border-purple-500 ps-4" data-i18n="resp_init_title">دعم وتنمية المشاريع الطلابية</h3>
+                            <p class="text-slate-700 text-lg leading-relaxed font-medium" data-i18n="resp_init_desc">تقديم الرعاية للمشاريع والأنشطة الإبداعية في الجامعات للمساهمة في بناء بيئة تشجع على الابتكار وتطوير المجتمع.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section (تنسيق احترافي أكثر، متباينة الألوان وجذابة) -->
+    <section id="contact-section" class="py-24 relative bg-slate-100">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <span class="text-secondary font-bold text-sm uppercase tracking-wider mb-2 block" data-i18n="contact_tag">خدمة العملاء</span>
+                <h2 class="text-3xl md:text-5xl font-black text-primary mb-4" data-i18n="contact_title">تواصل معنا الآن</h2>
+                <p class="text-slate-600 text-lg font-medium" data-i18n="contact_desc">أرسل تفاصيل مشروعك أو طلبك وسنقوم بالرد فوراً.</p>
+            </div>
+
+            <div class="max-w-6xl mx-auto bg-white rounded-[2.5rem] shadow-[0_25px_50px_-12px_rgba(15,23,42,0.2)] overflow-hidden flex flex-col lg:flex-row fade-in-up border border-slate-200">
+                <!-- Form Side -->
+                <div class="lg:w-3/5 p-8 md:p-12 lg:p-16 relative bg-white">
+                    <form onsubmit="submitToWhatsApp(event)" class="space-y-6 relative z-10">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-bold text-slate-800 mb-2" data-i18n="form_name">الاسم / الجهة</label>
+                                <input type="text" id="cf_name" required class="w-full bg-slate-50 border-2 border-slate-200 text-slate-900 rounded-2xl px-5 py-4 focus:outline-none focus:border-secondary transition-all font-medium shadow-sm">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-slate-800 mb-2" data-i18n="form_service">نوع الخدمة المطلوبة</label>
+                                <select id="cf_service" required class="w-full bg-slate-50 border-2 border-slate-200 text-slate-900 rounded-2xl px-5 py-4 focus:outline-none focus:border-secondary transition-all font-arabic font-medium cursor-pointer shadow-sm">
+                                    <option value="مقاولات وإنشاءات" data-i18n="form_opt_contract">مقاولات وإنشاءات</option>
+                                    <option value="نقل ثقيل ولوجستيات" data-i18n="form_opt_transport">نقل ثقيل ولوجستيات</option>
+                                    <option value="توريد مواد كسارات" data-i18n="form_opt_crusher">توريد مواد كسارات</option>
+                                    <option value="استشارة هندسية" data-i18n="form_opt_consult">استشارة هندسية</option>
+                                    <option value="أخرى" data-i18n="form_opt_other">أخرى</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-800 mb-2" data-i18n="form_msg">تفاصيل الطلب أو المشروع</label>
+                            <textarea id="cf_msg" rows="4" required class="w-full bg-slate-50 border-2 border-slate-200 text-slate-900 rounded-2xl px-5 py-4 focus:outline-none focus:border-secondary transition-all resize-none font-medium shadow-sm"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary hover:bg-slate-800 text-white py-5 rounded-2xl font-black text-lg shadow-xl flex items-center justify-center gap-3 transition-transform hover:-translate-y-1">
+                            <span data-i18n="btn_submit_wa">إرسال الطلب عبر الواتساب</span>
+                            <i class="fa-brands fa-whatsapp text-green-400 text-2xl"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Info Side -->
+                <div class="lg:w-2/5 bg-slate-900 text-white p-8 md:p-12 lg:p-16 flex flex-col justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary via-slate-800 to-slate-900 opacity-95"></div>
+                    <div class="absolute -end-24 -bottom-24 w-64 h-64 bg-secondary/30 rounded-full blur-[80px]"></div>
+                    
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-black text-white mb-8 border-s-4 border-secondary ps-4 leading-tight">معلومات الاتصال<br><span class="text-sm text-slate-400 font-medium mt-2 block">نحن متواجدون لخدمتك على مدار الساعة</span></h3>
+                        <div class="space-y-8">
+                            <div class="flex items-center gap-5 group">
+                                <div class="w-14 h-14 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-secondary text-2xl group-hover:bg-secondary group-hover:text-white transition-all shadow-lg"><i class="fa-solid fa-phone"></i></div>
+                                <div>
+                                    <p class="text-sm text-slate-400 mb-1" data-i18n="contact_phone_label">الهاتف والواتساب</p>
+                                    <p class="font-bold text-xl font-english tracking-widest text-white" dir="ltr">777077330</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-5 group">
+                                <div class="w-14 h-14 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-secondary text-2xl group-hover:bg-secondary group-hover:text-white transition-all shadow-lg"><i class="fa-solid fa-envelope"></i></div>
+                                <div>
+                                    <p class="text-sm text-slate-400 mb-1">البريد الإلكتروني</p>
+                                    <p class="font-bold text-lg font-english text-white" dir="ltr">info@alabdi-ye.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-5 group">
+                                <div class="w-14 h-14 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-secondary text-2xl group-hover:bg-secondary group-hover:text-white transition-all shadow-lg"><i class="fa-solid fa-location-dot"></i></div>
+                                <div>
+                                    <p class="text-sm text-slate-400 mb-1" data-i18n="contact_location_label">المقر الرئيسي</p>
+                                    <p class="font-bold text-base text-white" data-i18n="contact_location">الجمهورية اليمنية - عمران / صنعاء</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-primary text-slate-300 pt-20 pb-10 border-t-4 border-secondary relative overflow-hidden">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 text-center md:text-start">
+                <div class="lg:col-span-1">
+                    <div class="flex items-center justify-center md:justify-start gap-4 mb-6">
+                        <div class="w-14 h-14 bg-secondary rounded-xl flex items-center justify-center shadow-lg border border-yellow-600">
+                            <i class="fa-solid fa-building-user text-white text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-black text-white text-2xl" data-i18n="logo_title">مؤسسة العبدي</h3>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 mb-8 text-sm leading-relaxed" data-i18n="footer_desc">
+                        الخيار الأول في عمران وصنعاء للمقاولات العامة، النقل الثقيل، وتوريد مواد الكسارات بمعايير هندسية متطورة.
+                    </p>
+                    <div class="flex justify-center md:justify-start gap-4">
+                        <a href="https://wa.me/967777077330" target="_blank" class="w-12 h-12 rounded-full bg-white/10 border border-white/10 flex items-center justify-center hover:bg-green-500 text-white transition-all"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+                        <a href="mailto:info@alabdi-ye.com" class="w-12 h-12 rounded-full bg-white/10 border border-white/10 flex items-center justify-center hover:bg-blue-500 text-white transition-all"><i class="fa-solid fa-envelope text-xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 text-xl relative inline-block pb-2 border-b-2 border-secondary" data-i18n="footer_links">روابط سريعة</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#home" class="hover:text-secondary transition-colors"><span data-i18n="nav_home">الرئيسية</span></a></li>
+                        <li><a href="#about" class="hover:text-secondary transition-colors"><span data-i18n="nav_about">من نحن</span></a></li>
+                        <li><a href="#services" class="hover:text-secondary transition-colors"><span data-i18n="nav_services_main">الخدمات التشغيلية</span></a></li>
+                        <li><a href="#projects" class="hover:text-secondary transition-colors"><span data-i18n="nav_projects_main">المشاريع المنجزة</span></a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 text-xl relative inline-block pb-2 border-b-2 border-secondary" data-i18n="footer_services">خدماتنا</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#services" onclick="switchTab('tab-contracting', 'srv')" class="hover:text-secondary transition-colors"><span data-i18n="nav_sub_contracting">المقاولات والإنشاءات</span></a></li>
+                        <li><a href="#services" onclick="switchTab('tab-transport', 'srv')" class="hover:text-secondary transition-colors"><span data-i18n="nav_sub_transport">النقل الثقيل واللوجستيات</span></a></li>
+                        <li><a href="#services" onclick="switchTab('tab-crusher', 'srv')" class="hover:text-secondary transition-colors"><span data-i18n="nav_sub_crusher">مواد الكسارات</span></a></li>
+                        <li><a href="#responsibility" class="hover:text-secondary transition-colors"><span data-i18n="resp_title">الشراكة الأكاديمية</span></a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 text-xl relative inline-block pb-2 border-b-2 border-secondary" data-i18n="footer_map">موقعنا على الخريطة</h4>
+                    <div class="w-full h-40 rounded-2xl overflow-hidden shadow-lg border border-slate-700">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123287!2d44.275!3d15.349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTXCsDIwJzU2LjQiTiA0NMKwMTYnMzAuMCJF!5e0!3m2!1sar!2s!4v1715000000000!5m2!1sar!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center text-sm text-slate-500 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p data-i18n="footer_copy">&copy; 2024 مؤسسة الدكتور منصور العبدي. جميع الحقوق محفوظة.</p>
+                <p data-i18n="footer_seo">تصدر البحث محلياً: مقاولات عمران | نقل ثقيل صنعاء | مواد كسارات</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="fixed bottom-8 flex justify-between w-full px-6 z-50 pointer-events-none">
+        <a href="https://wa.me/967777077330" target="_blank" class="w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 hover:bg-green-600 transition-all btn-whatsapp pointer-events-auto" title="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center text-xl shadow-2xl hover:scale-110 hover:bg-slate-800 transition-all opacity-0 translate-y-10 pointer-events-auto duration-500 border border-slate-700" title="الصعود للأعلى">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.3.1/swiper-bundle.min.js"></script>
+    
+    <script>
+        window.addEventListener('scroll', () => {
+            const logoTitle = document.getElementById('logoTitle');
+            if (window.scrollY > 50) {
+                logoTitle.classList.remove('text-white');
+                logoTitle.classList.add('text-slate-100');
+            } else {
+                logoTitle.classList.remove('text-slate-100');
+                logoTitle.classList.add('text-white');
+            }
+        });
+
+        window.onload = function() {
+            if (typeof Swiper !== 'undefined') {
+                new Swiper(".heroSwiper", {
+                    loop: true,
+                    effect: "fade",
+                    fadeEffect: { crossFade: true },
+                    autoplay: { delay: 5000, disableOnInteraction: false },
+                    pagination: { el: ".swiper-pagination", clickable: true }
+                });
+            }
+        };
+
+        function switchTab(tabId, groupClass) {
+            document.querySelectorAll('.tab-content-' + groupClass).forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('block');
+            });
+            document.querySelectorAll('.tab-btn-' + groupClass).forEach(el => {
+                el.classList.remove('active', 'border-primary', 'bg-slate-50');
+            });
+            
+            let targetContent = document.getElementById(tabId);
+            if(targetContent) {
+                targetContent.classList.remove('hidden');
+                targetContent.classList.add('block');
+            }
+            
+            let activeBtnId = 'btn-' + tabId;
+            let activeBtn = document.getElementById(activeBtnId);
+            if(activeBtn) {
+                activeBtn.classList.add('active', 'border-primary');
+            }
+        }
+
+        function submitToWhatsApp(e) {
+            e.preventDefault();
+            const name = document.getElementById('cf_name').value;
+            const service = document.getElementById('cf_service').value;
+            const msg = document.getElementById('cf_msg').value;
+            const text = `*طلب جديد*%0A%0A*الاسم:* ${name}%0A*الخدمة:* ${service}%0A*التفاصيل:* ${msg}`;
+            window.open(`https://wa.me/967777077330?text=${text}`, '_blank');
+        }
+
+        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.add('hidden');
+            });
+        });
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    const counter = entry.target.querySelector('.counter');
+                    if (counter && !counter.classList.contains('counted')) {
+                        counter.classList.add('counted');
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        let start = 0;
+                        const duration = 2000;
+                        const increment = target / (duration / 16);
+                        const updateCounter = () => {
+                            start += increment;
+                            if (start < target) { counter.innerText = Math.ceil(start); requestAnimationFrame(updateCounter); }
+                            else { counter.innerText = target; }
+                        };
+                        updateCounter();
+                    }
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+        const scrollBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.remove('opacity-0', 'translate-y-10');
+                scrollBtn.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                scrollBtn.classList.add('opacity-0', 'translate-y-10');
+                scrollBtn.classList.remove('opacity-100', 'translate-y-0');
+            }
+        });
+
+        const translations = {
+            ar: {
+                logo_title: "مؤسسة العبدي", logo_sub: "للمقاولات والنقل الثقيل",
+                nav_home: "الرئيسية", nav_about: "من نحن", nav_services_main: "خدماتنا", nav_projects_main: "مشاريعنا", nav_responsibility: "مانس جود", nav_contact: "تواصل معنا",
+                tab_founder: "المؤسس", tab_vis_mis: "الرؤية والرسالة", tab_values: "قيمنا", tab_philosophy: "فلسفة العمل", tab_quality: "الجودة", tab_safety: "السلامة", tab_sustainability: "الاستدامة", tab_ethics: "أخلاقيات العمل", tab_responsibility: "مسؤوليتنا المجتمعية",
+                founder_name: "د. منصور صالح العبدي", founder_title_sub: "أكاديمي وباحث يمني", founder_title: "عن المؤسس",
+                founder_p1: "الدكتور منصور صالح محمد العبدي أكاديمي وباحث يمني متخصص في الإدارة والتخطيط التربوي وإدارة الجودة، ويتمتع بخبرة أكاديمية وبحثية وإدارية في مجالات تطوير المؤسسات، والتخطيط الاستراتيجي، والتحول الرقمي والحوكمة.",
+                founder_p2: "يحمل درجة الدكتوراه من جامعة أم درمان الإسلامية، ويعمل أستاذا مشاركا وعضو هيئة تدريس بجامعة عمران، كما يشغل عددا من المهام العلمية والإدارية، ويشارك في الإشراف على الرسائل العلمية والبحث والتطوير المؤسسي.",
+                founder_p3: "وتتركز اهتماماته في الجودة، والإدارة الإلكترونية، وتطوير التعليم العالي، والاستثمار في التعليم، وبناء المؤسسات وفق أساليب الإدارة الحديثة.",
+                tag_exp: "خبرة أكاديمية", tag_vision: "رؤية إدارية", tag_dev: "تطوير مؤسسي", tag_quality: "جودة واستدامة",
+                nav_sub_contracting: "المقاولات والإنشاءات", nav_sub_transport: "النقل الثقيل واللوجستيات", nav_sub_crusher: "مواد الكسارات",
+                proj_sub_build: "المباني والمنشآت", proj_sub_roads: "البنية التحتية والطرق", proj_sub_ind: "المشاريع الصناعية",
+                search_title: "البحث في الموقع",
+                hero_tag1: "رؤية هندسية متطورة", hero_title1: "نبني المستقبل بمعايير<br>الجودة الأكاديمية والميدانية", hero_desc1: "نجمع بين خبرات المقاولات العامة وأحدث النظم الهندسية لتشييد بنية تحتية مستدامة.",
+                hero_tag2: "جاهزية تشغيلية عالية", hero_title2: "أسطول نقل ثقيل يغطي<br>كافة المحافظات اليمنية", hero_desc2: "نقل الخامات الإنشائية، الإسمنت، والمعدات الثقيلة بسرعة وموثوقية عالية.",
+                hero_tag3: "تخطيط وتنفيذ دقيق", hero_title3: "مشاريع هندسية متكاملة<br>بأعلى معايير الإتقان", hero_desc3: "إدارة احترافية للمشاريع الإنشائية، الطرق، والمنشآت الخدمية بكفاءة عالية.",
+                cta_title: "هل لديك مشروع قادم؟", cta_desc: "تواصل معنا الآن للحصول على استشارة هندسية أو عرض سعر فوري.", cta_btn: "اطلب تسعيرة الآن",
+                stat_years: "عاماً من الخبرة", stat_projects: "مشروع منجز", stat_fleet: "شاحنة وآلية ومعدة", stat_clients: "شريك نجاح محلي",
+                about_tag: "الإطار التعريفي", about_title: "كيان اقتصادي يجمع بين التنمية الميدانية والرؤية الأكاديمية", about_desc: "تُمثل مؤسسة الدكتور منصور العبدي للمقاولات والنقل أحد الكيانات الاقتصادية والخدمية البارزة. نجمع بين تخصصات المقاولات العامة، التوريدات الإنشائية، والخدمات اللوجستية الثقيلة، مدعومين بخبرات أكاديمية متينة.",
+                vis_mis_title: "الرؤية والرسالة", vision_desc: "<strong>رؤيتنا:</strong> الريادة المبتكرة في قطاعات المقاولات والنقل، وتقديم نموذج يُحتذى به في التنمية المستدامة والجودة الهندسية محلياً وإقليمياً، مع تبني أحدث النظم التقنية.",
+                mission_desc: "<strong>رسالتنا:</strong> تنفيذ مشاريع البنية التحتية وإدارة العمليات اللوجستية بأعلى معايير الجودة الأكاديمية والمهنية لضمان رضا شركائنا واستدامة التنمية المجتمعية.",
+                values_title: "قيمنا المؤسسية", val1: "الجودة والتميز في التنفيذ الهندسي.", val2: "الشفافية المطلقة والنزاهة مع العملاء.", val3: "التطوير المستمر واعتماد التكنولوجيا الحديثة.", val4: "المسؤولية المجتمعية والشراكة الأكاديمية.",
+                philosophy_title: "فلسفة العمل", philosophy_desc: "نؤمن بأن العمل الهندسي والإنشائي ليس مجرد تشييد للمباني، بل هو فن وعلم يتطلب التخطيط الدقيق، الرؤية الثاقبة، والشراكة المفتوحة مع عملائنا. فلسفتنا ترتكز على إنجاز مشاريع مستدامة تخدم الأجيال القادمة.",
+                quality_title: "معايير الجودة", quality_desc: "نلتزم التزاماً صارماً بتطبيق أنظمة إدارة الجودة الشاملة (TQM) في كافة مراحل العمل، بدءاً من الفحوصات المخبرية واختيار المواد الخام، وصولاً إلى أدق تفاصيل التشطيبات والتسليم النهائي للمشروع.",
+                safety_title: "السلامة المهنية", safety_desc: "نضع سلامة كوادرنا البشرية وشركائنا في مواقع العمل على رأس أولوياتنا المطلقة. نطبق أحدث بروتوكولات السلامة والصحة المهنية لضمان بيئة عمل آمنة وخالية من المخاطر في جميع مشاريعنا.",
+                sustainability_title: "الاستدامة البيئية", sustainability_desc: "نسعى بشكل حثيث لتقليل الأثر البيئي لعملياتنا من خلال تبني تقنيات البناء الحديثة، وتحسين كفاءة استهلاك الموارد، واستخدام مواد مستدامة تحافظ على البيئة الطبيعية لليمن.",
+                ethics_title: "أخلاقيات العمل", ethics_desc: "النزاهة، الشفافية، والالتزام الدقيق بالمواعيد هي الركائز الأساسية التي تحكم كافة تعاملاتنا وعقودنا مع العملاء والموردين. نحن نبني ثقة متبادلة تفوق بناء الهياكل.",
+                responsibility_title: "مسؤوليتنا المجتمعية", responsibility_desc: "نحن جزء لا يتجزأ من النسيج المجتمعي. نلتزم بالمساهمة الفاعلة في تنمية المجتمع المحلي، ودعم المبادرات التعليمية، وتوفير فرص التدريب والتوظيف المستمر للكوادر الوطنية الشابة.",
+                catalog_tag: "دليل العمليات", services_title: "خدماتنا التشغيلية", catalog_desc: "استعرض قدراتنا التشغيلية في مختلف القطاعات الهندسية واللوجستية.",
+                srv_arch: "التصميم والإشراف", srv_arch_desc: "إعداد المخططات الهندسية، إدارة تكاليف المشاريع للمنشآت الإدارية والتعليمية والسكنية.",
+                srv_civil: "الهندسة المدنية", srv_civil_desc: "صب الخرسانات المسلحة، التسويات الإنشائية، وأعمال الحفريات لمشاريع البنية التحتية.",
+                srv_advanced: "الأنظمة المتقدمة", srv_advanced_desc: "تضمين تطبيقات الأتمتة والميكاترونيكس لتجهيز المباني الحديثة والمرافق الذكية.",
+                srv_materials: "نقل الخامات الإنشائية", srv_materials_desc: "شاحنات ثقيلة ومقطورات لنقل الركام، الرمل، والإسمنت المكيس والسائب بين المصانع والمواقع.",
+                srv_machinery: "نقل الآليات والمعدات", srv_machinery_desc: "سطحات ثقيلة (النقل المنخفض) لنقل الجرافات والحفارات ومعدات الرصف عبر الطرق الإقليمية.",
+                crusher_title: "إنتاج الركام والفحوصات الجيولوجية", crusher_desc: "نمتلك كسارات ومحاجر توفر إمداداً ثابتاً من الخرسانة والركام الحجري. نحرص على إبراز الفحوصات المخبرية التي تطابق المقاييس الهندسية لطمأنة المقاولين وشركاء النجاح.",
+                mat_gravel: "ركام كسارات", mat_size: "جميع المقاسات", mat_sand: "نيس / رمل", mat_pure: "نقي ومفحوص",
+                portfolio_tag: "معرض الأعمال", portfolio_title: "مشاريعنا المنجزة", portfolio_desc: "تصفح أبرز الأعمال الإنشائية ومشاريع البنية التحتية التي تم تنفيذها.",
+                proj_build_title: "المباني السكنية والتجارية", proj_build_desc: "تشييد مجمعات إدارية وسكنية حديثة تواواكب التطور العمراني، مع الاهتمام الدقيق بأعمال التشطيبات والواجهات المعمارية المبتكرة.",
+                proj_roads_title: "البنية التحتية وتمهيد الطرق", proj_roads_desc: "تنفيذ مشاريع شق الطرق وتسويتها، وإنشاء عبارات المياه الجبلية، لدعم ربط المدن والمناطق الريفية ببعضها بكفاءة وموثوقية.",
+                proj_ind_title: "المرافق والمشاريع الصناعية", proj_ind_desc: "تجهيز المواقع الصناعية، وتهيئة منصات العمل لمحطات الطاقة والمصانع باستخدام أحدث المعدات لضمان المتانة العالية للأرضيات والأساسات.",
+                resp_tag: "مؤسسة مانس جود التعليمية", resp_title: "الشراكة الأكاديمية والمجتمعية", resp_desc: "نؤمن بأن الاستثمار في الرأسمال البشري مكمل أساسي للاستثمار في البنية التحتية.",
+                tab_books: "طباعة الكتب الأكاديمية", tab_awards: "جوائز التميز التربوي", tab_jobs: "التدريب والتوظيف", tab_initiatives: "دعم المبادرات والمشاريع",
+                resp_books_title: "إصدارات الباحثين والطلاب", resp_books_desc: "تمويل طباعة الإصدارات للباحثين والطلاب الجامعيين لدعم مسيرتهم الأكاديمية (مثل كتاب: حكايات نحوية)، ضمن جهود مؤسسة مانس جود للنهوض بالتعليم.",
+                resp_awards_title: "تكريم الإبداع التربوي", resp_awards_desc: "رعاية حفلات التكريم للطلاب المتفوقين في الجامعات، وتوزيع جوائز الإتقان السنوية للمعلمين والتربويين لتحفيز البيئة التعليمية.",
+                resp_jobs_title: "حاضنة هندسية وتوظيف", resp_jobs_desc: "نوفر حاضنة تدريبية للمهندسين حديثي التخرج، ونستقبل السير الذاتية إلكترونياً لتبسيط وتسهيل إجراءات التوظيف واستقطاب الكفاءات.", btn_submit_cv: "قدم سيرتك الذاتية",
+                resp_init_title: "دعم وتنمية المشاريع الطلابية", resp_init_desc: "تقديم الرعاية للمشاريع والأنشطة الإبداعية في الجامعات للمساهمة في بناء بيئة تشجع على الابتكار وتطوير المجتمع.",
+                contact_tag: "خدمة العملاء", contact_title: "تواصل معنا الآن", contact_desc: "أرسل تفاصيل مشروعك أو طلبك وسنقوم بالرد فوراً.",
+                form_name: "الاسم / الجهة", form_service: "نوع الخدمة المطلوبة", form_opt_contract: "مقاولات وإنشاءات", form_opt_transport: "نقل ثقيل ولوجستيات", form_opt_crusher: "توريد مواد كسارات", form_opt_consult: "استشارة هندسية", form_opt_other: "أخرى",
+                form_msg: "تفاصيل الطلب أو المشروع", btn_submit_wa: "إرسال الطلب عبر الواتساب",
+                contact_phone_label: "الهاتف والواتساب", contact_location_label: "المقر الرئيسي", contact_location: "الجمهورية اليمنية - عمران / صنعاء",
+                footer_desc: "الخيار الأول في عمران وصنعاء للمقاولات العامة، النقل الثقيل، وتوريد مواد الكسارات بمعايير هندسية متطورة.",
+                footer_links: "روابط سريعة", footer_services: "خدماتنا", footer_map: "موقعنا على الخريطة",
+                footer_copy: "© 2024 مؤسسة الدكتور منصور العبدي. جميع الحقوق محفوظة.", footer_seo: "تصدر البحث محلياً: مقاولات عمران | نقل ثقيل صنعاء | مواد كسارات"
+            },
+            en: {
+                logo_title: "Al-Abdi Est", logo_sub: "Contracting & Transport",
+                nav_home: "Home", nav_about: "About Us", nav_services_main: "Services", nav_projects_main: "Projects", nav_responsibility: "Mans Good", nav_contact: "Contact Us",
+                tab_founder: "Founder", tab_vis_mis: "Vision & Mission", tab_values: "Values", tab_philosophy: "Work Philosophy", tab_quality: "Quality", tab_safety: "Safety", tab_sustainability: "Sustainability", tab_ethics: "Work Ethics", tab_responsibility: "Social Responsibility",
+                founder_name: "Dr. Mansour Saleh Al-Abdi", founder_title_sub: "Yemeni Academic & Researcher", founder_title: "About the Founder",
+                founder_p1: "Dr. Mansour Saleh Mohammed Al-Abdi is a Yemeni academic and researcher specializing in management, educational planning, and quality management, with extensive experience in institutional development and strategic planning.",
+                founder_p2: "He holds a Ph.D. from Omdurman Islamic University and works as an Associate Professor at Amran University, holding several scientific and administrative roles.",
+                founder_p3: "His interests focus on quality, electronic management, higher education development, and institutional building according to modern management methods.",
+                tag_exp: "Academic Experience", tag_vision: "Admin Vision", tag_dev: "Corporate Dev", tag_quality: "Quality & Sustainability",
+                nav_sub_contracting: "Contracting", nav_sub_transport: "Heavy Transport", nav_sub_crusher: "Crushers Materials",
+                proj_sub_build: "Buildings", proj_sub_roads: "Infrastructure", proj_sub_ind: "Industrial",
+                search_title: "Site Search",
+                hero_tag1: "Advanced Engineering Vision", hero_title1: "Building the Future<br>with Academic Quality", hero_desc1: "Combining general contracting expertise and mechatronics to build sustainable infrastructure.",
+                hero_tag2: "High Operational Readiness", hero_title2: "Heavy Transport Fleet<br>Covering All Provinces", hero_desc2: "Transporting construction materials, cement, and heavy equipment reliably.",
+                hero_tag3: "Precise Planning & Execution", hero_title3: "Integrated Engineering Projects<br>with Highest Standards", hero_desc3: "Professional management of construction projects and infrastructure.",
+                cta_title: "Have an upcoming project?", cta_desc: "Contact us now for an engineering consultation or immediate quote.", cta_btn: "Request a Quote",
+                stat_years: "Years of Experience", stat_projects: "Completed Projects", stat_fleet: "Trucks & Machinery", stat_clients: "Success Partners",
+                about_tag: "Corporate Profile", about_title: "An Economic Entity Blending Field Development with Academic Vision", about_desc: "Dr. Mansour Al-Abdi Est is a prominent economic entity combining general contracting, construction supplies, and heavy logistics.",
+                vis_mis_title: "Vision and Mission", vision_desc: "<strong>Our Vision:</strong> Innovative leadership in contracting and transport sectors, setting a role model in sustainable development.", mission_desc: "<strong>Our Mission:</strong> Executing infrastructure projects, managing logistics, and providing materials with the highest academic standards.",
+                values_title: "Core Values", val1: "Quality & Excellence.", val2: "Transparency & Integrity.", val3: "Continuous Tech Development.", val4: "Social Responsibility.",
+                philosophy_title: "Work Philosophy", philosophy_desc: "We believe engineering is an art and science requiring precise planning and open partnership to achieve sustainable projects.",
+                quality_title: "Quality Standards", quality_desc: "We strictly commit to Total Quality Management (TQM) in all work phases, from raw materials to final handover.",
+                safety_title: "Occupational Safety", safety_desc: "We place the safety of our human cadres at the top of our priorities, applying the latest safety protocols.",
+                sustainability_title: "Environmental Sustainability", sustainability_desc: "We strive to minimize our environmental footprint by adopting modern building techniques and sustainable resources.",
+                ethics_title: "Work Ethics", ethics_desc: "Integrity, transparency, and strict adherence to deadlines govern our relations with clients and suppliers.",
+                responsibility_title: "Social Responsibility", responsibility_desc: "We actively contribute to local community development and provide continuous training for young national cadres.",
+                catalog_tag: "Services Guide", services_title: "Operational Services", catalog_desc: "Explore our operational capabilities in various engineering and logistics sectors.",
+                srv_arch: "Design & Supervision", srv_arch_desc: "Preparing engineering plans, managing project costs for facilities.",
+                srv_civil: "Civil Engineering", srv_civil_desc: "Reinforced concrete pouring, structural leveling, and excavation.",
+                srv_advanced: "Advanced Systems", srv_advanced_desc: "Integrating automation and mechatronics for modern buildings.",
+                srv_materials: "Materials Transport", srv_materials_desc: "Heavy trucks and trailers for transporting aggregate, sand, and cement.",
+                srv_machinery: "Machinery Transport", srv_machinery_desc: "Heavy flatbeds for transporting bulldozers, excavators, and paving equipment.",
+                crusher_title: "Aggregate Production & Tests", crusher_desc: "We own crushers providing a steady supply of concrete and stone. We highlight lab tests matching engineering standards.",
+                mat_gravel: "Crusher Aggregate", mat_size: "All Sizes", mat_sand: "Sand", mat_pure: "Pure & Tested",
+                portfolio_tag: "Portfolio", portfolio_title: "Completed Projects", portfolio_desc: "Browse our prominent construction works and infrastructure projects.",
+                proj_build_title: "Residential & Commercial", proj_build_desc: "Constructing modern administrative and residential complexes with innovative facades.",
+                proj_roads_title: "Infrastructure & Roads", proj_roads_desc: "Executing road cutting and leveling projects, and building mountain water culverts.",
+                proj_ind_title: "Industrial Facilities", proj_ind_desc: "Preparing industrial sites and work platforms for power plants and factories.",
+                resp_tag: "Mans Good Foundation", resp_title: "Academic & Social Partnership", resp_desc: "We believe investing in human capital is essential to infrastructure investment.",
+                tab_books: "Printing Academic Books", tab_awards: "Educational Excellence Awards", tab_jobs: "Training & Employment", tab_initiatives: "Youth Initiatives",
+                resp_books_title: "Researchers Publications", resp_books_desc: "Funding the printing of academic publications for university students and researchers.",
+                resp_awards_title: "Honoring Educational Creativity", resp_awards_desc: "Sponsoring honoring ceremonies for top students and annual perfection awards.",
+                resp_jobs_title: "Engineering Incubator", resp_jobs_desc: "Providing a training incubator for newly graduated engineers and receiving CVs.", btn_submit_cv: "Submit Your CV",
+                resp_init_title: "Supporting Student Projects", resp_init_desc: "Sponsoring creative activities and graduation projects to encourage innovation.",
+                contact_tag: "Customer Service", contact_title: "Contact Us Now", contact_desc: "Send your project details and we will reply immediately.",
+                form_name: "Name / Organization", form_service: "Required Service", form_opt_contract: "Contracting", form_opt_transport: "Transport", form_opt_crusher: "Crushers", form_opt_consult: "Consultation", form_opt_other: "Other",
+                form_msg: "Request Details", btn_submit_wa: "Send via WhatsApp",
+                contact_phone_label: "Phone & WhatsApp", contact_location_label: "Headquarters", contact_location: "Yemen - Amran / Sana'a",
+                footer_desc: "The first choice in Amran and Sana'a for general contracting, heavy transport, and crusher materials.",
+                footer_links: "Quick Links", footer_services: "Our Services", footer_map: "Our Location",
+                footer_copy: "© 2024 Dr. Mansour Al-Abdi Est. All rights reserved.", footer_seo: "Local SEO: Amran Contracting | Sana'a Transport | Crushers"
+            }
+        };
+
+        let currentLang = 'ar';
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            const htmlTag = document.documentElement;
+            
+            if (currentLang === 'en') {
+                htmlTag.setAttribute('dir', 'ltr');
+                htmlTag.setAttribute('lang', 'en');
+                document.body.classList.remove('font-arabic');
+                document.body.classList.add('font-english');
+                document.getElementById('langText').innerText = 'العربية';
+                document.getElementById('langToggleMobile').innerText = 'AR';
+            } else {
+                htmlTag.setAttribute('dir', 'rtl');
+                htmlTag.setAttribute('lang', 'ar');
+                document.body.classList.remove('font-english');
+                document.body.classList.add('font-arabic');
+                document.getElementById('langText').innerText = 'English';
+                document.getElementById('langToggleMobile').innerText = 'EN';
+            }
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    if (el.tagName.toLowerCase() === 'input' || el.tagName.toLowerCase() === 'textarea') {
+                        el.setAttribute('placeholder', translations[currentLang][key]);
+                    } else {
+                        el.innerHTML = translations[currentLang][key];
+                    }
+                }
+            });
+        }
+
+        document.getElementById('langToggle').addEventListener('click', toggleLanguage);
+        document.getElementById('langToggleMobile').addEventListener('click', toggleLanguage);
+    </script>
+</body>
+</html>
